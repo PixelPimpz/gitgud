@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-SHARE="$( tmux show -gqv @CHER )/lib/share"
+SHARE="$( tmux show -gqv @CHER )"
 ICONS="$( tmux show -gqv @ICONS )"
 source "$SHARE/dump.fun"
 source "$SHARE/fatal.fun"
