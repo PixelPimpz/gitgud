@@ -11,11 +11,12 @@ main()
   dump ">> \$ICONS: $ICONS"
   icon=$(yaml2item ".icons.sys.GitBranch" "$ICONS")
   (( "$?" != 0 )) && fatal "failed to get icon" || dump ">> GitBranch: $icon" 
+  tmux set -g @GitBranch "$icon"
   unit $icon
 }
 
 unit()
 {
-  ttmux set -g @Gitgud "#[fg=#{@}"
+  tmux set -g @Gitgud "#[fg=#{@DarkYellow}]#{@HemiL}#[bg=#{@Light2},reverse] #{@GitBranch} branch-name #[bg=default,noreverse]#{@TriangleR}"
 }
 main
