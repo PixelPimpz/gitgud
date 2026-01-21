@@ -5,5 +5,10 @@ source "$SHARE/dump.fun"
 source "$SHARE/fatal.fun"
 source "$SHARE/yaml2item.fun"
 
-dump ">>> tmux plugin: GITGUD running..."
-
+main()
+{
+  dump ">>> tmux plugin: GITGUD running..."
+  icon=$(yaml2item ".icons.sys.GitBranch" "$ICONS")
+  (( "$?" != 0 )) && fatal "failed to get icon" || dump ">> GitBranch: $icon" 
+}
+main
