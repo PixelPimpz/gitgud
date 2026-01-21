@@ -7,11 +7,12 @@ source "$SHARE/yaml2item.fun"
 
 main()
 {
+  local git-addy="$(grep -e 'remote.origin.url' <$( git-info ))"
   dump ">>> tmux plugin: GITGUD running..."
-  dump ">> \$ICONS: $ICONS"
   icon=$(yaml2item ".icons.sys.GitBranch" "$ICONS")
   (( "$?" != 0 )) && fatal "failed to get icon" || dump ">> GitBranch: $icon" 
   tmux set -g @GitBranch "$icon"
+  
   unit $icon
 }
 
