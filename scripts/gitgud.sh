@@ -22,6 +22,6 @@ main()
 }
 
 unit(){
-  tmux set -g @Gitgud "#[fg=#{@Orange}]#{@HemiL}#[bg=#{@BG0_S}]#[reverse]#{@GitBranch} #[bg=default]#[noreverse]#{@TriangleR}"
+  tmux set -g @Gitgud "#[fg=#{@green}]#{@HemiL}#[bg=#{@bg0}]#[reverse]#{@GitBranch} #[bg=default]#[noreverse]#{@TriangleR}"
 }
 main
