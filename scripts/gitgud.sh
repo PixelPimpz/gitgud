@@ -9,6 +9,7 @@ main()
 {
   dump ">>> tmux plugin: GITGUD running..."
   local info="$(grep -e 'remote.origin.url' <$( git-info ))"
+  echo "$info"
   local git_name="$(git-info | grep "^origin.*push" | sed  's/^.*://;s/\..*$//')"
   dump ">> line: $info"
   dump ">> git_name: $git_name"
