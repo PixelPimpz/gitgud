@@ -11,7 +11,7 @@ main()
   local info="$(grep -e 'remote.origin.url' <$( git-info ))"
   local git_name="$(git-info | grep "^origin.*push" | sed  's/^.*://;s/\..*$//')"
   dump ">> line: $info"
-  dump ">> git_name: ${git_name}"
+  dump ">> git_name: $git_name"
   icon=$(yaml2item ".icons.sys.GitBranch" "$ICONS")
   (( "$?" != 0 )) && fatal "failed to get icon" || dump ">> GitBranch: $icon" 
   tmux set -g @GitBranch "$icon"
