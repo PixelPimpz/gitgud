@@ -8,7 +8,7 @@ source "$SHARE/yaml2item.fun"
 main()
 {
   dump ">>> gitgud running..."
-  local icon=$(yaml2item ".icons.sys.git" $ICONS)
+  local icon=$(yaml2item ".icons.app.git" $ICONS)
   dump ">> icon: $icon"
   tmux set -g '@gitgud' "$icon "
   local remote_url="$(git info | grep "remote\.origin\.url" )"
