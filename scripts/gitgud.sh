@@ -11,8 +11,8 @@ main()
   local icon=$(yaml2item ".icons.sys.GitBranch" $ICONS)
   dump ">> icon: $icon"
   tmux set -g '@gitgud' "$icon "
-  tmux set -ag @gitgud "repo/branch"
   local remote_url="$(git info | grep "remote\.origin\.url" )"
+  tmux set -ag @gitgud "$remote_url"
 
 }
 
