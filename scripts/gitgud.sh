@@ -10,7 +10,7 @@ main()
   dump ">>> gitgud running..."
   local icon=$(yaml2item ".icons.sys.GitBranch" $ICONS)
   dump ">> icon: $icon"
-  tmux set -g '@gitgud' "$icon"
+  tmux set -g '@gitgud' "$icon "
   tmux set -ag @gitgud "repo/branch"
 
 }
