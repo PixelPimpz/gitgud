@@ -8,6 +8,7 @@ source "$SHARE/yaml2item.fun"
 main()
 {
   dump ">>> gitgud running..."
+  local icon=$(yaml2item ".icons.sys.GitBranch" $ICONS)
 }
 
 main
