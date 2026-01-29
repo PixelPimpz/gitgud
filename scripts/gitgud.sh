@@ -12,6 +12,7 @@ main()
   dump ">> icon: $icon"
   tmux set -g '@gitgud' "$icon "
   tmux set -ag @gitgud "repo/branch"
+  local remote_url="$(git info | grep "remote\.origin\.url" )"
 
 }
 
