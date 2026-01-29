@@ -12,7 +12,7 @@ main()
   dump ">> icon: $icon"
   tmux set -g '@gitgud' "$icon "
   local remote_url="$(git info | grep "remote\.origin\.url" )"
-  tmux set -ag @gitgud "${remote_url##*github.com/}"
+  tmux set -ag @gitgud "${remote_url##*github.com/} "
 
 }
 
