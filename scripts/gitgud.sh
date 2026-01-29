@@ -12,7 +12,7 @@ main()
   dump ">>> gitgud running..."
   [[ ! -d "$LOCAL_ROOT/.git" ]] && fatal "not a git" 
   local icon=$(yaml2item ".icons.app.gh" $ICONS)
-  local remote_url="$(tmux run-shell 'git info | grep "remote\.origin\.url"')"
+  local remote_url="$(tmux display -p $(tmux run-shell 'git info | grep -e "remote\.origin\.url"'))"
   dump ">> icon: $icon"
   tmux set -g '@gitgud' "$icon "
   dump ">> remote_url: $remote_url"
