@@ -9,6 +9,7 @@ main()
 {
   dump ">>> gitgud running..."
   local icon=$(yaml2item ".icons.sys.GitBranch" $ICONS)
+  dump ">> icon: $icon"
 }
 
 main
